@@ -1,0 +1,28 @@
+# ===== Keil 编译产物 =====
+Objects/
+Listings/
+DebugConfig/
+*.o
+*.axf
+*.hex
+*.bin
+*.map
+*.lst
+*.htm
+*.lnp
+*.dep
+*.crf
+*.d
+*.sct
+*.iex
+
+# ===== Keil 临时文件 / 个人窗口布局 =====
+*.bak
+*.uvoptx
+*.uvguix.*
+
+# ===== 编辑器 / 系统 =====
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
