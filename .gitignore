@@ -18,11 +18,14 @@ DebugConfig/
 
 # ===== Keil 临时文件 / 个人窗口布局 =====
 *.bak
+*.bak_*
+*.utf8bak
 *.uvoptx
 *.uvguix.*
 
 # ===== 编辑器 / 系统 =====
-.vscode/
+.vscode/*
+!.vscode/c_cpp_properties.json
 .idea/
 Thumbs.db
 Desktop.ini

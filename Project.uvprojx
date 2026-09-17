@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Start;.\Library;.\User;.\System;.\HardWare</IncludePath>
+              <IncludePath>.\Start;.\Library;.\User;.\Bsp;.\App</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -533,157 +533,157 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>System</GroupName>
+          <GroupName>Bsp</GroupName>
           <Files>
             <File>
               <FileName>Delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\System\Delay.c</FilePath>
+              <FilePath>.\Bsp\Delay.c</FilePath>
             </File>
             <File>
               <FileName>Delay.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\System\Delay.h</FilePath>
-            </File>
-            <File>
-              <FileName>MyRTC.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\System\MyRTC.c</FilePath>
-            </File>
-            <File>
-              <FileName>MyRTC.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\System\MyRTC.h</FilePath>
+              <FilePath>.\Bsp\Delay.h</FilePath>
             </File>
             <File>
               <FileName>Timer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\System\Timer.c</FilePath>
+              <FilePath>.\Bsp\Timer.c</FilePath>
             </File>
             <File>
               <FileName>Timer.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\System\Timer.h</FilePath>
+              <FilePath>.\Bsp\Timer.h</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>HardWare</GroupName>
-          <Files>
+            <File>
+              <FileName>MyRTC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Bsp\MyRTC.c</FilePath>
+            </File>
+            <File>
+              <FileName>MyRTC.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Bsp\MyRTC.h</FilePath>
+            </File>
             <File>
               <FileName>LED.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\HardWare\LED.c</FilePath>
+              <FilePath>.\Bsp\LED.c</FilePath>
             </File>
             <File>
               <FileName>LED.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\HardWare\LED.h</FilePath>
+              <FilePath>.\Bsp\LED.h</FilePath>
             </File>
             <File>
               <FileName>key.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\HardWare\key.c</FilePath>
+              <FilePath>.\Bsp\key.c</FilePath>
             </File>
             <File>
               <FileName>key.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\HardWare\key.h</FilePath>
+              <FilePath>.\Bsp\key.h</FilePath>
             </File>
             <File>
               <FileName>Buzzer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\HardWare\Buzzer.c</FilePath>
+              <FilePath>.\Bsp\Buzzer.c</FilePath>
             </File>
             <File>
               <FileName>Buzzer.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\HardWare\Buzzer.h</FilePath>
-            </File>
-            <File>
-              <FileName>OLED.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\HardWare\OLED.c</FilePath>
-            </File>
-            <File>
-              <FileName>OLED.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\HardWare\OLED.h</FilePath>
-            </File>
-            <File>
-              <FileName>OLED_Data.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\HardWare\OLED_Data.c</FilePath>
-            </File>
-            <File>
-              <FileName>OLED_Data.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\HardWare\OLED_Data.h</FilePath>
-            </File>
-            <File>
-              <FileName>menu.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\HardWare\menu.c</FilePath>
-            </File>
-            <File>
-              <FileName>menu.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\HardWare\menu.h</FilePath>
-            </File>
-            <File>
-              <FileName>SetTime.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\HardWare\SetTime.c</FilePath>
-            </File>
-            <File>
-              <FileName>SetTime.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\HardWare\SetTime.h</FilePath>
-            </File>
-            <File>
-              <FileName>MPU6050.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\HardWare\MPU6050.c</FilePath>
-            </File>
-            <File>
-              <FileName>MPU6050.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\HardWare\MPU6050.h</FilePath>
-            </File>
-            <File>
-              <FileName>MPU6050_Reg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\HardWare\MPU6050_Reg.h</FilePath>
-            </File>
-            <File>
-              <FileName>MyI2C.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\HardWare\MyI2C.c</FilePath>
-            </File>
-            <File>
-              <FileName>MyI2C.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\HardWare\MyI2C.h</FilePath>
-            </File>
-            <File>
-              <FileName>dno.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\HardWare\dno.c</FilePath>
-            </File>
-            <File>
-              <FileName>dno.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\HardWare\dno.h</FilePath>
+              <FilePath>.\Bsp\Buzzer.h</FilePath>
             </File>
             <File>
               <FileName>AD.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\HardWare\AD.c</FilePath>
+              <FilePath>.\Bsp\AD.c</FilePath>
             </File>
             <File>
               <FileName>AD.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\HardWare\AD.h</FilePath>
+              <FilePath>.\Bsp\AD.h</FilePath>
+            </File>
+            <File>
+              <FileName>MyI2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Bsp\MyI2C.c</FilePath>
+            </File>
+            <File>
+              <FileName>MyI2C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Bsp\MyI2C.h</FilePath>
+            </File>
+            <File>
+              <FileName>OLED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Bsp\OLED.c</FilePath>
+            </File>
+            <File>
+              <FileName>OLED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Bsp\OLED.h</FilePath>
+            </File>
+            <File>
+              <FileName>OLED_Data.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Bsp\OLED_Data.c</FilePath>
+            </File>
+            <File>
+              <FileName>OLED_Data.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Bsp\OLED_Data.h</FilePath>
+            </File>
+            <File>
+              <FileName>MPU6050.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Bsp\MPU6050.c</FilePath>
+            </File>
+            <File>
+              <FileName>MPU6050.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Bsp\MPU6050.h</FilePath>
+            </File>
+            <File>
+              <FileName>MPU6050_Reg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Bsp\MPU6050_Reg.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>App</GroupName>
+          <Files>
+            <File>
+              <FileName>menu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\menu.c</FilePath>
+            </File>
+            <File>
+              <FileName>menu.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\menu.h</FilePath>
+            </File>
+            <File>
+              <FileName>SetTime.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\SetTime.c</FilePath>
+            </File>
+            <File>
+              <FileName>SetTime.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\SetTime.h</FilePath>
+            </File>
+            <File>
+              <FileName>dno.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\dno.c</FilePath>
+            </File>
+            <File>
+              <FileName>dno.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\dno.h</FilePath>
             </File>
           </Files>
         </Group>
