@@ -23,9 +23,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
-#include "key.h"    /* Key_Tick(), Key3_Tick() */
-#include "menu.h"   /* StopWatch_Tick()        */
-#include "dno.h"    /* Dino_Tick()             */
+#include "key.h"          /* Key_Tick(), Key3_Tick()  */
+#include "app_stopwatch.h"/* StopWatch_Tick()         */
+#include "dno.h"          /* Dino_Tick()              */
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
