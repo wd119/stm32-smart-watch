@@ -2,6 +2,8 @@
 #include "Delay.h"
 #include "OLED.h"
 #include "menu.h"
+#include "app_menu.h"
+#include "bsp_init.h"
 #include"Timer.h"
 #include"key.h"
 #include"dno.h"
