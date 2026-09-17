@@ -23,6 +23,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
+#include "key.h"    /* Key_Tick(), Key3_Tick() */
+#include "menu.h"   /* StopWatch_Tick()        */
+#include "dno.h"    /* Dino_Tick()             */
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -144,13 +147,24 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief  This function handles PPP interrupt request.
+  * @brief  This function handles TIM2 global interrupt request.
+  * @note   TIM2 is configured by Timer_Init() as a 1 ms timebase.
+  *         The callbacks below drive key debouncing and the
+  *         per-feature timekeeping of the watch.
   * @param  None
   * @retval None
   */
-/*void PPP_IRQHandler(void)
+void TIM2_IRQHandler(void)
 {
-}*/
+  if (TIM_GetITStatus(TIM2, TIM_IT_Update) == SET)
+  {
+    Key_Tick();
+    StopWatch_Tick();
+    Dino_Tick();
+    Key3_Tick();
+    TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
+  }
+}
 
 /**
   * @}

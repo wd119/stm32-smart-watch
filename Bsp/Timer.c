@@ -1,5 +1,4 @@
 #include "stm32f10x.h"
-extern uint16_t num;
 void Timer_Init(void){
        RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE); // Enable TIM2 clock
 
