@@ -1,7 +1,10 @@
 #include "stm32f10x.h"
 #include "OLED.h"
 #include "key.h"
-#include "menu.h"
+#include "app_ui.h"
+#include "app_led.h"
+#include "app_game.h"
+#include "app_emoji.h"
 #include "app_stopwatch.h"
 #include "app_attitude.h"
 

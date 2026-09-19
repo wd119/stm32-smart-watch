@@ -2,6 +2,7 @@
 #include"MyRTC.h"
 #include"OLED.h"
 #include"key.h"
+#include"app_ui.h"
 
 void Show_SetTime_FirstUI(void){
     OLED_ShowImage(0,0,16,16,Return);
@@ -23,7 +24,6 @@ void change_SetTime(uint8_t i,uint8_t flag){//flag=1Îª¼Ó£¬flag=2Îª¼õ
   }
   MyRTC_SetTime();
 }
-extern uint8_t KeyNum1;
 int SetYear(void){
     while(1){
         KeyNum1=Key_GetNum();

@@ -4,6 +4,7 @@
 #include<stdlib.h>
 #include<math.h>
 #include"Delay.h"
+#include"app_ui.h"
 
 struct Object_Position{
     uint8_t minX,minY,maxX,maxY;
@@ -41,7 +42,6 @@ void Show_Cloud(void){
 }
 
 uint8_t dino_jump_flag=0; //0±º≈‹ 1Ã¯‘æ
-extern uint8_t KeyNum1;
 uint16_t jump_t;
 uint8_t jump_Pos;
 extern double pi;

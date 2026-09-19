@@ -1,12 +1,12 @@
 #include "stm32f10x.h"
 #include "Delay.h"
 #include "OLED.h"
-#include "menu.h"
+#include "app_clock.h"
+#include "app_setting.h"
 #include "app_menu.h"
 #include "bsp_init.h"
 #include"Timer.h"
 #include"key.h"
-#include"dno.h"
 // Device header
 int main(void){
 	OLED_Init();

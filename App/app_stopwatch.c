@@ -1,7 +1,7 @@
 #include "stm32f10x.h"
 #include "OLED.h"
 #include "key.h"
-#include "menu.h"
+#include "app_ui.h"
 
 //√Î±Ì
 uint8_t hour,min,sec;

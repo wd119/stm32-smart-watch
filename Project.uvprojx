@@ -664,36 +664,65 @@
         </Group>
         <Group>
           <GroupName>App</GroupName>
-          <Files>
-            <File>
-              <FileName>menu.c</FileName>
+          <Files><File>
+              <FileName>app_battery.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\App\menu.c</FilePath>
+              <FilePath>.\App\app_battery.c</FilePath>
             </File>
             <File>
-              <FileName>menu.h</FileName>
+              <FileName>app_battery.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\App\menu.h</FilePath>
+              <FilePath>.\App\app_battery.h</FilePath>
             </File>
             <File>
-              <FileName>SetTime.c</FileName>
+              <FileName>app_clock.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\App\SetTime.c</FilePath>
+              <FilePath>.\App\app_clock.c</FilePath>
             </File>
             <File>
-              <FileName>SetTime.h</FileName>
+              <FileName>app_clock.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\App\SetTime.h</FilePath>
+              <FilePath>.\App\app_clock.h</FilePath>
             </File>
             <File>
-              <FileName>dno.c</FileName>
+              <FileName>app_dino.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\App\dno.c</FilePath>
+              <FilePath>.\App\app_dino.c</FilePath>
             </File>
             <File>
-              <FileName>dno.h</FileName>
+              <FileName>app_dino.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\App\dno.h</FilePath>
+              <FilePath>.\App\app_dino.h</FilePath>
+            </File>
+            <File>
+              <FileName>app_emoji.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\app_emoji.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_emoji.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\app_emoji.h</FilePath>
+            </File>
+            <File>
+              <FileName>app_game.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\app_game.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_game.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\app_game.h</FilePath>
+            </File>
+            <File>
+              <FileName>app_led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\app_led.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_led.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\app_led.h</FilePath>
             </File>
             <File>
               <FileName>app_menu.c</FileName>
@@ -704,6 +733,26 @@
               <FileName>app_menu.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\App\app_menu.h</FilePath>
+            </File>
+            <File>
+              <FileName>app_setting.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\app_setting.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_setting.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\app_setting.h</FilePath>
+            </File>
+            <File>
+              <FileName>app_settime.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\app_settime.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_settime.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\app_settime.h</FilePath>
             </File>
             <File>
               <FileName>app_stopwatch.c</FileName>
@@ -725,7 +774,16 @@
               <FileType>5</FileType>
               <FilePath>.\App\app_attitude.h</FilePath>
             </File>
-          </Files>
+            <File>
+              <FileName>app_ui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\app_ui.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_ui.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\app_ui.h</FilePath>
+            </File></Files>
         </Group>
         <Group>
           <GroupName>User</GroupName>
