@@ -6,7 +6,7 @@ void Timer_Init(void){
        TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
        TIM_TimeBaseStructure.TIM_ClockDivision=TIM_CKD_DIV1;
        TIM_TimeBaseStructure.TIM_CounterMode=TIM_CounterMode_Up;
-    TIM_TimeBaseStructure.TIM_Period=100-1; // Set the period for 1s interrupt
+    TIM_TimeBaseStructure.TIM_Period=100-1; // Set the period for 1ms interrupt
     TIM_TimeBaseStructure.TIM_Prescaler=720-1; // Set the prescaler for 1MHz timer clock
         TIM_TimeBaseStructure.TIM_RepetitionCounter=0;
         TIM_TimeBaseInit(TIM2,&TIM_TimeBaseStructure); // Initialize TIM2 with the specified parameters
