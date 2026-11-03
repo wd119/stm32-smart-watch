@@ -22,6 +22,7 @@ DebugConfig/
 *.utf8bak
 *.uvoptx
 *.uvguix.*
+*.scvd
 
 # ===== 编辑器 / 系统 =====
 .vscode/*
