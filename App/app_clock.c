@@ -4,6 +4,7 @@
 #include "key.h"
 #include "app_ui.h"
 #include "app_battery.h"
+#include "app_page.h"
 
 //首页时间
 void Show_Clock_UI(void){
@@ -15,42 +16,13 @@ void Show_Clock_UI(void){
     OLED_ShowString(96,48,"设置",OLED_8X16);
 
 }
-int clkflag=1;
+uint8_t clkflag=1;
+
+static const PageItem Clock_Page[]={
+    {Show_Clock_UI,0,  0,48,32,16},
+    {Show_Clock_UI,0, 96,48,32,16},
+};
+
 int First_Page_Clock(void){
-    while(1){
-        KeyNum1=Key_GetNum();
-        if(KeyNum1==1){//上一项
-            clkflag--;
-            if(clkflag<=0){
-                clkflag=2;
-            }
-        }else if(KeyNum1==2){//下一项
-            clkflag++;
-            if(clkflag>=3){
-                clkflag=1;
-            }
-
-    }else if(KeyNum1==3){//确认
-            OLED_Clear();
-            OLED_Update();
-            return clkflag;
-        }
-        else if(KeyNum1==4){//关机
-            GPIO_ResetBits(GPIOB,GPIO_Pin_13);
-	        GPIO_SetBits(GPIOB,GPIO_Pin_12);
-        }
-        switch(clkflag){
-            case 1:
-                Show_Clock_UI();
-                OLED_ReverseArea(0,48,32,16);
-                OLED_Update();
-                break;
-            case 2:
-                Show_Clock_UI();
-                OLED_ReverseArea(96,48,32,16);
-                OLED_Update();
-                break;
-
-        }
-    }
+    return Page_Run(Clock_Page,2,&clkflag);
 }

@@ -5,6 +5,7 @@
 #include "MPU6050.h"
 #include "Delay.h"
 #include <math.h>
+#include "app_page.h"
 
 //MPU6050
 int16_t ax,ay,az,gx,gy,gz;//MPU6050测得的三轴加速度和角速度
@@ -34,20 +35,16 @@ void Show_MPU6050_UI(void){
     OLED_Printf(0,32,OLED_8X16,"Pitch:%.2f",Pitch);
     OLED_Printf(0,48,OLED_8X16,"Yaw:%.2f",Yaw);
 }
+static void MPU6050_Body(void){
+    OLED_Clear();
+    MPU6050_Calculation();
+    Show_MPU6050_UI();
+    OLED_ReverseArea(0,0,16,16);
+    OLED_Update();
+}
 int MPU6050(void){
-    while(1){
-        KeyNum1=Key_GetNum();
-        if(KeyNum1==3){
-            OLED_Clear();
-            OLED_Update();
-            return 0;
-        }
-        OLED_Clear();
-        MPU6050_Calculation();
-        Show_MPU6050_UI();
-        OLED_ReverseArea(0,0,16,16);
-        OLED_Update();
-    }
+    Page_Loop(MPU6050_Body);
+    return 0;
 }
 
 //------------------------水平仪-----------------------------------
@@ -57,16 +54,12 @@ void Show_Gradienter_UI(void){
     OLED_DrawCircle(64,32,30,0);
     OLED_DrawCircle(64-Roll,32+Pitch,4,1);
 }
+static void Gradienter_Body(void){
+    OLED_Clear();
+    Show_Gradienter_UI();
+    OLED_Update();
+}
 int Gradienter(void){
-      while(1){
-        KeyNum1=Key_GetNum();
-        if(KeyNum1==3){
-            OLED_Clear();
-            OLED_Update();
-            return 0;
-        }
-        OLED_Clear();
-        Show_Gradienter_UI();
-        OLED_Update();
-    }
+    Page_Loop(Gradienter_Body);
+    return 0;
 }

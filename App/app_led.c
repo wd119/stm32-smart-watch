@@ -3,6 +3,7 @@
 #include "key.h"
 #include "app_ui.h"
 #include "LED.h"
+#include "app_page.h"
 
 //手电筒
 
@@ -13,49 +14,13 @@ void Show_LED_UI(void){
 
 }
 uint8_t led_flag=1;
+
+static const PageItem LED_Page[]={
+    {Show_LED_UI,0,        0, 0,16,16},
+    {Show_LED_UI,LED_OFF, 20,20,36,24},
+    {Show_LED_UI,LED_ON,  72,20,24,24},
+};
+
 int LED(void){
-    while(1){
-        KeyNum1=Key_GetNum();
-        uint8_t led_flag_temp=0;
-        if(KeyNum1==1){//上一项
-            led_flag--;
-            if(led_flag<=0){
-                led_flag=3;
-            }
-        }else if(KeyNum1==2){//下一项
-            led_flag++;
-            if(led_flag>=4){
-                led_flag=1;
-            }
-
-    }else if(KeyNum1==3){//确认
-            OLED_Clear();
-            OLED_Update();
-            led_flag_temp=led_flag;
-        }
-        if(led_flag_temp==1){
-            return 0;
-        }
-        switch(led_flag){
-            case 1:
-                Show_LED_UI();
-                OLED_ReverseArea(0,0,16,16);
-                OLED_Update();
-                break;
-            case 2:
-                Show_LED_UI();
-                LED_OFF();
-                OLED_ReverseArea(20,20,36,24);
-                OLED_Update();
-                break;
-            case 3:
-                Show_LED_UI();
-                LED_ON();
-                OLED_ReverseArea(72,20,24,24);
-                OLED_Update();
-                break;
-           
-
-        }
-    }
+    return Page_Run(LED_Page,3,&led_flag);
 }

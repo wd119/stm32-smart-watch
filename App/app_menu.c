@@ -7,6 +7,7 @@
 #include "app_emoji.h"
 #include "app_stopwatch.h"
 #include "app_attitude.h"
+#include "app_page.h"
 
 //滑动菜单界面
 uint8_t pre_selection;//上次选择的选项
@@ -69,56 +70,61 @@ if(pre_selection>=1){
     
 }
 uint8_t menu_flag=1;
+
+static void Menu_To_StopWatch (void){ MenuTOFunction(); StopWatch();  }
+static void Menu_To_LED       (void){ MenuTOFunction(); LED();        }
+static void Menu_To_MPU6050   (void){ MenuTOFunction(); MPU6050();    }
+static void Menu_To_Game      (void){ MenuTOFunction(); Game();       }
+static void Menu_To_Emoji     (void){ MenuTOFunction(); Emoji();      }
+static void Menu_To_Gradienter(void){ MenuTOFunction(); Gradienter(); }
+
+static void (*const Menu_Enter[8])(void)={
+    0,
+    0,                    /* 1 : exit to main loop */
+    Menu_To_StopWatch,    /* 2 */
+    Menu_To_LED,          /* 3 */
+    Menu_To_MPU6050,      /* 4 */
+    Menu_To_Game,         /* 5 */
+    Menu_To_Emoji,        /* 6 */
+    Menu_To_Gradienter,   /* 7 */
+};
+
 int Menu(void){
     move_flag=1;
-    uint8_t DirectFlag=2;//置1移动到上一项 2 下一项
+    uint8_t DirectFlag=2;
 
      while(1){
-        KeyNum1=Key_GetNum();
+        uint8_t key=Key_GetNum();
         uint8_t menu_flag_temp=0;
-        if(KeyNum1==1){//上一项
+        if(key==PAGE_KEY_POWER){
+            Power_Off();
+        }else if(key==PAGE_KEY_UP){
             DirectFlag=1;
             move_flag=1;
-            menu_flag--;
-            if(menu_flag<=0){
+            if(menu_flag<=1){
                 menu_flag=7;
+            }else{
+                menu_flag--;
             }
-        }else if(KeyNum1==2){//下一项
+        }else if(key==PAGE_KEY_DOWN){
             DirectFlag=2;
             move_flag=1;
-            menu_flag++;
-            if(menu_flag>=8){
+            if(menu_flag>=7){
                 menu_flag=1;
+            }else{
+                menu_flag++;
             }
-
-    }else if(KeyNum1==3){//确认
+        }else if(key==PAGE_KEY_OK){
             OLED_Clear();
             OLED_Update();
             menu_flag_temp=menu_flag;
         }
         if(menu_flag_temp==1){
             return 0;
-        }else if(menu_flag_temp==2){
-            MenuTOFunction();
-           StopWatch();
-        }else if(menu_flag_temp==3){
-            MenuTOFunction();
-           
-           LED();
-        }else if(menu_flag_temp==4){
-             MenuTOFunction();
-           MPU6050();
-        }else if(menu_flag_temp==5){
-           MenuTOFunction();
-           Game();
-        }else if(menu_flag_temp==6){
-           MenuTOFunction();
-           Emoji();
-        }else if(menu_flag_temp==7){
-           MenuTOFunction();
-           Gradienter();
+        }else if(Menu_Enter[menu_flag_temp]){
+            Menu_Enter[menu_flag_temp]();
         }
-  
+
     if(menu_flag==1){
          if(DirectFlag==1){
                     Set_Selection(move_flag,1,0);

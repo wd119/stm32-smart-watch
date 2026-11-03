@@ -664,7 +664,8 @@
         </Group>
         <Group>
           <GroupName>App</GroupName>
-          <Files><File>
+          <Files>
+            <File>
               <FileName>app_battery.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\App\app_battery.c</FilePath>
@@ -735,6 +736,16 @@
               <FilePath>.\App\app_menu.h</FilePath>
             </File>
             <File>
+              <FileName>app_page.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\App\app_page.c</FilePath>
+            </File>
+            <File>
+              <FileName>app_page.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\App\app_page.h</FilePath>
+            </File>
+            <File>
               <FileName>app_setting.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\App\app_setting.c</FilePath>
@@ -783,7 +794,8 @@
               <FileName>app_ui.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\App\app_ui.h</FilePath>
-            </File></Files>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>User</GroupName>

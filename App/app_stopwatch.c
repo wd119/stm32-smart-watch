@@ -2,6 +2,7 @@
 #include "OLED.h"
 #include "key.h"
 #include "app_ui.h"
+#include "app_page.h"
 
 //秒表
 uint8_t hour,min,sec;
@@ -34,56 +35,19 @@ void StopWatch_Tick(void){
    
 }
 
+static void SW_Start(void){ start_timing_flag=1; }
+static void SW_Stop (void){ start_timing_flag=0; }
+static void SW_Reset(void){ start_timing_flag=0; hour=min=sec=0; }
+
 uint8_t stopwatch_flag=1;
+
+static const PageItem StopWatch_Page[]={
+    {Show_StopWatch_UI,0,         0, 0,16,16},
+    {Show_StopWatch_UI,SW_Start,  8,44,32,16},
+    {Show_StopWatch_UI,SW_Stop,  48,44,32,16},
+    {Show_StopWatch_UI,SW_Reset, 88,44,32,16},
+};
+
 int StopWatch(void){
-     while(1){
-        KeyNum1=Key_GetNum();
-        uint8_t stopwatch_flag_temp=0;
-        if(KeyNum1==1){//上一项
-            stopwatch_flag--;
-            if(stopwatch_flag<=0){
-                stopwatch_flag=4;
-            }
-        }else if(KeyNum1==2){//下一项
-            stopwatch_flag++;
-            if(stopwatch_flag>=5){
-                stopwatch_flag=1;
-            }
-
-    }else if(KeyNum1==3){//确认
-            OLED_Clear();
-            OLED_Update();
-            stopwatch_flag_temp=stopwatch_flag;
-        }
-        if(stopwatch_flag_temp==1){
-            return 0;
-        }
-        switch(stopwatch_flag){
-            case 1:
-                Show_StopWatch_UI();
-                OLED_ReverseArea(0,0,16,16);
-                OLED_Update();
-                break;
-            case 2:
-                Show_StopWatch_UI();
-                start_timing_flag=1;
-                OLED_ReverseArea(8,44,32,16);
-                OLED_Update();
-                break;
-            case 3:
-                Show_StopWatch_UI();
-               start_timing_flag=0;
-                OLED_ReverseArea(48,44,32,16);
-                OLED_Update();
-                break;
-             case 4:
-                Show_StopWatch_UI();
-                start_timing_flag=0;
-                hour=min=sec=0;
-                OLED_ReverseArea(88,44,32,16);
-                OLED_Update();
-                break;
-
-        }
-    }
+    return Page_Run(StopWatch_Page,4,&stopwatch_flag);
 }

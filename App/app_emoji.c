@@ -3,6 +3,7 @@
 #include "key.h"
 #include "app_ui.h"
 #include "Delay.h"
+#include "app_page.h"
 
 //------------------------动态表情包-----------------------------------
 void Show_Emoji_UI(void){
@@ -34,13 +35,6 @@ void Show_Emoji_UI(void){
 }
 
 int Emoji(void){
-    while(1){
-        KeyNum1=Key_GetNum();
-        if(KeyNum1==3){
-            OLED_Clear();
-            OLED_Update();
-            return 0;
-        }
-        Show_Emoji_UI();
-    }
+    Page_Loop(Show_Emoji_UI);
+    return 0;
 }
